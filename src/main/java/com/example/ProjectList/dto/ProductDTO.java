@@ -1,4 +1,4 @@
-package com.example.ProjectList;
+package com.example.ProjectList.dto;
 
 import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicLong;

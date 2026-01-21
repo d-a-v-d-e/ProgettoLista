@@ -1,11 +1,12 @@
-package com.example.ProjectList;
+package com.example.ProjectList.controller;
 
+import com.example.ProjectList.dto.ProductDTO;
+import com.example.ProjectList.model.Product;
+import com.example.ProjectList.repository.ProductRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/products")
