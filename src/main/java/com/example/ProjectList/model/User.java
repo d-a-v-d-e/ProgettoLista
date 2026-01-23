@@ -11,7 +11,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String username;
 
-    private String chosenName;
+    private String nickname;
 
     @Column(nullable = false)
     private String password;
@@ -20,9 +20,9 @@ public class User {
 
     public User() {}
 
-    public User(String username, String chosenName,String password, String role) {
+    public User(String username, String nickname, String password, String role) {
         this.username = username;
-        this.chosenName = chosenName;
+        this.nickname = nickname;
         this.password = password;
         this.role = role;
     }
@@ -30,8 +30,8 @@ public class User {
     // getter & setter
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
-    public String getChosenName() { return chosenName; }
-    public void setChosenName(String chosenName) { this.chosenName = chosenName; }
+    public String getNickname() { return nickname; }
+    public void setNickname(String chosenName) { this.nickname = chosenName; }
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
     public String getRole() { return role; }

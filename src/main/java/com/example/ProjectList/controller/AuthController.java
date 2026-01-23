@@ -7,6 +7,8 @@ import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
