@@ -30,7 +30,7 @@ Il progetto è pensato per approfondire lo sviluppo backend, la sicurezza con **
 - **JPA / Hibernate**
 - **MySQL**
 - **Redis**
-- **Maven**
+- **Gradle**
 - **Git / GitHub**
 
 ---
