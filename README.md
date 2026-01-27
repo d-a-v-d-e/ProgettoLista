@@ -34,6 +34,3 @@ Il progetto è pensato per approfondire lo sviluppo backend, la sicurezza con **
 - **Git / GitHub**
 
 ---
-
-## 📦 Struttura del progetto
-
