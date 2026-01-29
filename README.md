@@ -82,18 +82,18 @@ La persistenza è gestita tramite **JPA / Hibernate**.
 Avviare l’applicazione e i servizi necessari tramite Docker Compose:
 ```bash
 docker-compose up --build
-```
+
 ###2. Registrazione utente
 Registrare un nuovo utente tramite Postman:
 
 POST http://localhost:8080/auth/register
 
-  es struttura JSON: ```json
+  es struttura JSON:
       {
       "username": "Mario123",
       "nickname": "Mario Rossi",
       "password": "123"
-      }```
+      }
 
 ###3. Autenticazione
 Dopo la registrazione, l’utente può autenticarsi ed effettuare richieste agli endpoint protetti.
@@ -103,17 +103,17 @@ Per i test tramite Postman:
   - Inserire username e password di un utente registrato
       
 ###4.Gestione prodotti (CRUD)
- ```bash **GET http://localhost:8080/products**```bash
- ```bash **POST http://localhost:8080/products/add**```bash
+ **GET http://localhost:8080/products** 
+ **POST http://localhost:8080/products/add**
    
-   es struttura JSON:```json
+   es struttura JSON:
        {
         "name": "prodotto1",
         "quantity": 4,
         "note": "esempio nota"
-       }```
+       }
        
- ```bash **http://localhost:8080/products/update/(ID)**```bash
-  ```bash**http://localhost:8080/products/delete/(ID)**```bash
+ **http://localhost:8080/products/update/(ID)**
+ **http://localhost:8080/products/delete/(ID)**
 
          
