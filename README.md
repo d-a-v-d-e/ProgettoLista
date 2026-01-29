@@ -7,7 +7,7 @@ Il progetto è pensato per approfondire lo sviluppo backend, la sicurezza con **
 
 ---
 
-##  Funzionalità
+##  🚀 Funzionalità
 
 - Registrazione e login utente tramite username e password
 - Autenticazione e autorizzazione tramite **JWT**
@@ -21,7 +21,7 @@ Il progetto è pensato per approfondire lo sviluppo backend, la sicurezza con **
 
 ---
 
-## Tecnologie utilizzate
+## 🛠️ Tecnologie utilizzate
 
 - **Java**
 - **Spring Boot**
@@ -32,24 +32,6 @@ Il progetto è pensato per approfondire lo sviluppo backend, la sicurezza con **
 - **Redis**
 - **Gradle**
 - **Git / GitHub**
-
----
-
-## Struttura del progetto
-
--src
- └── main
-     ├── java
-     │   └── com.example.grocerylist
-     │       ├── controller      # gestisce le richieste (REST API)
-     │       ├── dto         
-     │       ├── repository      # interfaccia con il database (JPA)
-     │       ├── model           # entità / oggetti (User, Product, ecc.)
-     │       └── security        # gestione JWT, filtri, autenticazione
-     └── resources    
-         └── application.properties  # configurazioni database, Redis, JWT
-
-*(la struttura può variare in base all’evoluzione del progetto)*
 
 ---
 
@@ -86,9 +68,10 @@ docker-compose up --build
 ### 2. Registrazione utente
 Registrare un nuovo utente tramite Postman:
 
-POST http://localhost:8080/auth/register
-```bash
-  es struttura JSON:
+**POST** http://localhost:8080/auth/register 
+
+es struttura JSON:
+```json
       {
       "username": "Mario123",
       "nickname": "Mario Rossi",
@@ -103,27 +86,53 @@ Per i test tramite Postman:
   - Selezionare Auth → Basic Auth
   - Inserire username e password di un utente registrato
       
-### 4.Gestione prodotti (CRUD)
-```bash
- **GET http://localhost:8080/products**
-```
-```bash
- **POST http://localhost:8080/products/add**
-```
+### 4. Gestione prodotti (CRUD)
+- Visualizzare i prodotti **GET** `http://localhost:8080/products`
+- Inserire un prodotto **POST** `http://localhost:8080/products/add`
+
+    es struttura JSON:
  
-```bash
-  es struttura JSON:
+```json  
        {
         "name": "prodotto1",
         "quantity": 4,
         "note": "esempio nota"
        }
-```    
- ```bash
-**http://localhost:8080/products/update/(ID)**
 ```
-```bash
- **http://localhost:8080/products/delete/(ID)**
-```
+- Modificare un prodotto **PUT** `http://localhost:8080/products/update/(ID)`
 
-         
+- Eliminare un prodotto **DELETE** `http://localhost:8080/products/delete/(ID)`
+
+
+## 🗄️ Accesso al database
+
+È possibile visualizzare i contenuti delle tabelle `products` e `users` accedendo direttamente al container MySQL.
+
+```bash
+docker exec -it projectlist-mysql-1 mysql -u user -p products
+```
+**Password configurata nel docker-compose**
+
+### Tabella `products`
+La tabella **products** mostra:
+- ID del prodotto
+- Il nome del prodotto (NOT NULL)
+- La quantità di prodotto da acquistare
+- La data attuale inserita automaticamente
+- Una nota aggiunta dall'utente
+
+### Tabella `users`
+La tabella **users** mostra:
+- Username univoco
+- Nickname scelto a piacere dall'utente
+- Password criptata
+- Ruolo
+
+---
+
+## 🔮 Sviluppi futuri
+- Miglioramento sicurezza JWT (refresh token)
+- Gestione delle famiglie con invito di utenti
+- Ruoli e permessi (admin / membro)
+- Frontend in React per l’interazione con le API
+- Refactoring e miglioramento della struttura del codice
