@@ -12,6 +12,7 @@ public class Product {
 
     private Long id;
 
+    @Column(nullable = false)
     private String name;
     private Integer quantity;
     private LocalDate date;

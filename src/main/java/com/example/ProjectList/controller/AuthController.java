@@ -3,7 +3,9 @@ package com.example.ProjectList.controller;
 
 import com.example.ProjectList.model.User;
 import com.example.ProjectList.repository.UserRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.support.SimpleTriggerContext;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,8 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
     }
 
+
+
     //POST register
     @PostMapping("/register")
     public String register(@RequestBody User user){
@@ -32,8 +36,4 @@ public class AuthController {
         return ("utente registrato");
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "login ok";
-    }
 }
