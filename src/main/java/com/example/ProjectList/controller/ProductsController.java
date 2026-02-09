@@ -57,6 +57,6 @@ public class ProductsController {
     public String deleteProd(@PathVariable long id)
     {
         productRepository.deleteById(id);
-        return "suca!";
+        return "Prodotto eliminato!";
     }
 }
