@@ -63,6 +63,9 @@ La persistenza è gestita tramite **JPA / Hibernate**.
 ### 1. Avvio dei servizi
 Avviare l’applicazione e i servizi necessari tramite Docker Compose:
 ```bash
+./gradlew clean build -x test
+```
+```bash
 docker-compose up --build
 ```
 ### 2. Registrazione utente
@@ -109,7 +112,7 @@ Per i test tramite Postman:
 È possibile visualizzare i contenuti delle tabelle `products` e `users` accedendo direttamente al container MySQL.
 
 ```bash
-docker exec -it projectlist-mysql-1 mysql -u user -p products
+docker exec -it progettolista-master-mysql-1 mysql -u user -p products
 ```
 **Password configurata nel docker-compose**
 
